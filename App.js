@@ -48,6 +48,16 @@ export default class App extends React.Component {
             this.state.data.drinks.map(drink => {
               return (
                 <View key={drink.idDrink}>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      textAlign: "center",
+                      marginBottom: 10,
+                      fontWeight: "bold"
+                    }}
+                  >
+                    {drink.strDrink}
+                  </Text>
                   <Image
                     style={{ width: 400, height: 400 }}
                     source={{ uri: drink.strDrinkThumb }}
@@ -55,17 +65,6 @@ export default class App extends React.Component {
                   <Text style={{ fontSize: 20, marginBottom: 10 }}>
                     {drink.strInstructions}
                   </Text>
-                  <Button
-                    icon={<Icon name="code" color="#ffffff" />}
-                    backgroundColor="#03A9F4"
-                    buttonStyle={{
-                      borderRadius: 0,
-                      marginLeft: 0,
-                      marginRight: 0,
-                      marginBottom: 0
-                    }}
-                    title="VIEW NOW"
-                  />
                 </View>
 
                 // <View key={drink.idDrink}>
