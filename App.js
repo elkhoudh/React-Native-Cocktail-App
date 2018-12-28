@@ -1,12 +1,11 @@
 import React from "react";
+import { Button, Card, ListItem } from "react-native-elements";
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  Button,
   Image,
-  Card,
   Icon,
   ScrollView
 } from "react-native";
@@ -48,23 +47,25 @@ export default class App extends React.Component {
             this.state.data.drinks.map(drink => {
               return (
                 <View key={drink.idDrink}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      textAlign: "center",
-                      marginBottom: 10,
-                      fontWeight: "bold"
-                    }}
+                  <Card
+                    title={drink.strDrink}
+                    image={{ uri: drink.strDrinkThumb }}
                   >
-                    {drink.strDrink}
-                  </Text>
-                  <Image
-                    style={{ width: 400, height: 400 }}
-                    source={{ uri: drink.strDrinkThumb }}
-                  />
-                  <Text style={{ fontSize: 20, marginBottom: 10 }}>
-                    {drink.strInstructions}
-                  </Text>
+                    <Text style={{ marginBottom: 10 }}>
+                      {drink.strInstructions}
+                    </Text>
+                    <Button
+                      icon={{ name: "code" }}
+                      backgroundColor="#03A9F4"
+                      buttonStyle={{
+                        borderRadius: 0,
+                        marginLeft: 0,
+                        marginRight: 0,
+                        marginBottom: 0
+                      }}
+                      title="VIEW NOW"
+                    />
+                  </Card>
                 </View>
 
                 // <View key={drink.idDrink}>
